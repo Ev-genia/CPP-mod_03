@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:11:05 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/13 17:17:47 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/13 18:04:21 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ public:
 	// void		setEnergyPoints(int EnergyPoints);
 	int			getAttackDamage( void) const;
 	// void		setAttackDamage(int AttackDamage);
+	void		show(void) const;
 };
 
 #endif

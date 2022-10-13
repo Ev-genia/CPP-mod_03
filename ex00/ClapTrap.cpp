@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:11:13 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/13 17:38:22 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/13 18:12:33 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,11 @@ void	ClapTrap::attack(const std::string &target)
 		std::cout << "ClapTrap " << Name << " attacks " << target << ", causing " << AttackDamage << " points of damage!" << std::endl;
 		EnergyPoints -= 1;
 	}
+	else
+	{
+		std::cout << Name << " died" << std::endl;
+		return ;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -93,7 +98,16 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (EnergyPoints > 0)
 	{
+		std::cout << "ClapTrap " << Name << " be Repaired " << amount << "!" << std::endl;
 		HitPoints += amount;
 		EnergyPoints -= 1;
 	}
+}
+
+void	ClapTrap::show(void) const
+{
+	std::cout << "Name: " << Name << std::endl;
+	std::cout << "Hit Points: " << HitPoints << std::endl;
+	std::cout << "Energy Points: " << EnergyPoints << std::endl;
+	std::cout << "Attack Damage: " << AttackDamage << std::endl;
 }
