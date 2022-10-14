@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:11:13 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/13 18:12:33 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/14 13:23:17 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,18 @@ ClapTrap::ClapTrap(std::string enterName)
 
 void	ClapTrap::attack(const std::string &target)
 {
-	if (EnergyPoints > 0 && HitPoints > 0)
+	if (HitPoints < 1)
+	{
+		std::cout << "ClapTrap " << Name << " died" << std::endl;
+		return ;
+	}
+	if (EnergyPoints > 0)
 	{
 		std::cout << "ClapTrap " << Name << " attacks " << target << ", causing " << AttackDamage << " points of damage!" << std::endl;
 		EnergyPoints -= 1;
 	}
 	else
-	{
-		std::cout << Name << " died" << std::endl;
-		return ;
-	}
+		std::cout << Name << " don't have EnergyPoints" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -96,18 +98,46 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (HitPoints < 1)
+	{
+		std::cout << "ClapTrap " << Name << " died" << std::endl;
+		return ;
+	}
 	if (EnergyPoints > 0)
 	{
 		std::cout << "ClapTrap " << Name << " be Repaired " << amount << "!" << std::endl;
 		HitPoints += amount;
 		EnergyPoints -= 1;
 	}
+	else
+		std::cout << Name << " don't have EnergyPoints" << std::endl;
 }
 
-void	ClapTrap::show(void) const
+void	ClapTrap::showInfo(void) const
 {
 	std::cout << "Name: " << Name << std::endl;
 	std::cout << "Hit Points: " << HitPoints << std::endl;
 	std::cout << "Energy Points: " << EnergyPoints << std::endl;
 	std::cout << "Attack Damage: " << AttackDamage << std::endl;
+	std::cout << "-------------------" << std::endl;
+}
+
+void	ClapTrap::setName(std::string enterName)
+{
+	Name = enterName;
+}
+
+void	ClapTrap::setHitPoints(int points)
+{
+	HitPoints = points;
+}
+
+void	ClapTrap::setEnergyPoints(int points)
+{
+	EnergyPoints = points;
+}
+
+void	ClapTrap::setAttackDamage(int points)
+{
+	AttackDamage = points;
 }

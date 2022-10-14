@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:11:05 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/13 18:04:21 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/14 12:48:54 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ public:
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
 	std::string	getName( void) const;
-	// void		setName(std::string Name);
 	int			getHitPoints( void) const;
-	// void		setHitPoints(int HitPoints);
 	int			getEnergyPoints( void) const;
-	// void		setEnergyPoints(int EnergyPoints);
 	int			getAttackDamage( void) const;
-	// void		setAttackDamage(int AttackDamage);
-	void		show(void) const;
+	void		showInfo(void) const;
+	void		setName(std::string Name);
+	void		setHitPoints(int HitPoints);
+	void		setEnergyPoints(int EnergyPoints);
+	void		setAttackDamage(int AttackDamage);
 };
 
 #endif
