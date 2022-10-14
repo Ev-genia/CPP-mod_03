@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:11:13 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/14 16:32:19 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/14 21:54:19 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,10 @@ int	ClapTrap::getAttackDamage(void) const
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 {
-	int			set;
-	std::string	name;
-
-	Name = rhs.getName();
-	HitPoints = rhs.getHitPoints();
-	EnergyPoints = rhs.getEnergyPoints();
-	AttackDamage = rhs.getAttackDamage();
+	Name = rhs.Name;
+	HitPoints = rhs.HitPoints;
+	EnergyPoints = rhs.EnergyPoints;
+	AttackDamage = rhs.AttackDamage;
 	return (*this);
 }
 
