@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:29:39 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/14 15:09:42 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/14 16:48:37 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class ScavTrap: public ClapTrap
 {
-private:
-	int		guardStatus;
 public:
 	ScavTrap();
 	ScavTrap(const ScavTrap & src);
