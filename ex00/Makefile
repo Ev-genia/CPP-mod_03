@@ -6,11 +6,11 @@
 #    By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 11:54:51 by mlarra            #+#    #+#              #
-#    Updated: 2022/10/13 17:18:41 by mlarra           ###   ########.fr        #
+#    Updated: 2022/10/14 16:17:48 by mlarra           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	ex00
+NAME	=	ClapTrap
 
 SRCS	=	main.cpp	ClapTrap.cpp
 

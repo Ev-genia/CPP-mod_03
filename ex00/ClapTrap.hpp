@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:11:05 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/14 12:48:54 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/14 14:30:24 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	ClapTrap();
 	ClapTrap(const ClapTrap &src);
 	ClapTrap & operator=(const ClapTrap &rhs);
-	~ClapTrap();
+	virtual ~ClapTrap();
 	
 	ClapTrap(std::string	Name);
 	
