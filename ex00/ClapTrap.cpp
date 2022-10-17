@@ -6,21 +6,41 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:11:13 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/14 21:54:19 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/17 09:54:53 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap(): Name(""), HitPoints(10), EnergyPoints(10), AttackDamage(0)
 {
 	std::cout << "Constructor default is call" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string enterName): Name(enterName), HitPoints(10), 
+					EnergyPoints(10), AttackDamage(0)
+{
+	std::cout << "Constructor with Name parametr is call" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
+{
+	Name = rhs.Name;
+	HitPoints = rhs.HitPoints;
+	EnergyPoints = rhs.EnergyPoints;
+	AttackDamage = rhs.AttackDamage;
+	return (*this);
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	std::cout << "Copy constructor is call" << std::endl;
 	*this = src;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "Destructor is call" << std::endl;
 }
 
 std::string	ClapTrap::getName(void) const
@@ -41,29 +61,6 @@ int	ClapTrap::getEnergyPoints(void) const
 int	ClapTrap::getAttackDamage(void) const
 {
 	return (AttackDamage);
-}
-
-ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
-{
-	Name = rhs.Name;
-	HitPoints = rhs.HitPoints;
-	EnergyPoints = rhs.EnergyPoints;
-	AttackDamage = rhs.AttackDamage;
-	return (*this);
-}
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "Destructor is call" << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string enterName)
-{
-	std::cout << "Constructor with Name parametr is call" << std::endl;
-	Name = enterName;
-	HitPoints = 10;
-	EnergyPoints = 10;
-	AttackDamage = 0;
 }
 
 void	ClapTrap::attack(const std::string &target)
