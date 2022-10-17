@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:43:18 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/14 22:23:06 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/17 12:22:34 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int main( void )
 	man4.showInfo();
 	man4.beRepaired(10);
 	man4.showInfo();
+
 	return 0;
 }

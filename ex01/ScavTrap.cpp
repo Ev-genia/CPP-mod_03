@@ -6,21 +6,28 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 13:29:43 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/14 17:22:11 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/17 11:13:16 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap(): ClapTrap()
 {
 	std::cout << "ScavTrap Constructor default is call" << std::endl;
+	Name = "";
+	HitPoints = 100;
+	EnergyPoints = 50;
+	AttackDamage = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap & src)
+ScavTrap::ScavTrap(std::string enterName): ClapTrap(enterName)
 {
-	std::cout << "ScavTrap Copy constructor is call" << std::endl;
-	*this = src;
+	std::cout << "ScavTrap Constructor with Name parametr is call" << std::endl;
+	Name = enterName;
+	HitPoints = 100;
+	EnergyPoints = 50;
+	AttackDamage = 20;
 }
 
 ScavTrap & ScavTrap::operator=(const ScavTrap &rhs)
@@ -32,18 +39,15 @@ ScavTrap & ScavTrap::operator=(const ScavTrap &rhs)
 	return (*this);
 }
 
+ScavTrap::ScavTrap(const ScavTrap & src)
+{
+	std::cout << "ScavTrap Copy constructor is call" << std::endl;
+	*this = src;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap Destructor is call" << std::endl;
-}
-
-ScavTrap::ScavTrap(std::string enterName)
-{
-	std::cout << "ScavTrap Constructor with Name parametr is call" << std::endl;
-	Name = enterName;
-	HitPoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
 }
 
 void	ScavTrap::guardGate()
