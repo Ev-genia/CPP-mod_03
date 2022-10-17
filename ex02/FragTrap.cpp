@@ -6,7 +6,7 @@
 /*   By: mlarra <mlarra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:40:30 by mlarra            #+#    #+#             */
-/*   Updated: 2022/10/14 22:18:20 by mlarra           ###   ########.fr       */
+/*   Updated: 2022/10/17 10:22:00 by mlarra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ FragTrap::FragTrap()
 	std::cout << "FragTrap Constructor default is call" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap & src)
+FragTrap::FragTrap(std::string enterName): ClapTrap(enterName)
 {
-	std::cout << "FragTrap Copy constructor is call" << std::endl;
-	*this = src;
+	std::cout << "FragTrap Constructor with Name parametr is call" << std::endl;
+	Name = enterName;
+	HitPoints = 100;
+	EnergyPoints = 100;
+	AttackDamage = 30;
 }
 
 FragTrap & FragTrap::operator=(const FragTrap & rhs)
@@ -32,18 +35,15 @@ FragTrap & FragTrap::operator=(const FragTrap & rhs)
 	return (*this);
 }
 
+FragTrap::FragTrap(const FragTrap & src)
+{
+	std::cout << "FragTrap Copy constructor is call" << std::endl;
+	*this = src;
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap Destructor is call" << std::endl;
-}
-
-FragTrap::FragTrap(std::string enterName)
-{
-	std::cout << "FragTrap Constructor with Name parametr is call" << std::endl;
-	Name = enterName;
-	HitPoints = 100;
-	EnergyPoints = 100;
-	AttackDamage = 30;
 }
 
 void	FragTrap::highFivesGuys(void)
